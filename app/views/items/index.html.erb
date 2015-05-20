@@ -1,2 +1,17 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>Listing items for user</h1>
+ 
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Link Type</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.link %></td>
+      <td><%= item.link_type %></td>
+      <td><%= item.description %></td>
+    </tr>
+  <% end %>
+</table>
