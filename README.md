@@ -1,4 +1,4 @@
-# Applift code challenge
+# Rails example app
 
 Build a RoR application to manage your media items collection.
  
