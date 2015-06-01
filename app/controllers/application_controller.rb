@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
   	@current_user
   end
 
+  def add_user(user)
+    session[:user_id] = user.user_id
+  end
+
   private
   def secure_app
   	redirect_to controller: 'login' if current_user.nil?
