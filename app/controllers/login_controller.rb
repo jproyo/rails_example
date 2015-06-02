@@ -3,6 +3,10 @@ class LoginController < ApplicationController
 	def index
 	end
 
+	def destroy
+		session.destroy
+	end
+
 	def create
  		user = User.find_by(username: params[:login][:email].downcase)
  		if user.nil?
