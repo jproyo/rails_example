@@ -17,8 +17,4 @@ class LoginController < ApplicationController
 		end
 	end
 
-	def new
-		puts params
-		render :index
-	end	
 end

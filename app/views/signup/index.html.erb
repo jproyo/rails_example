@@ -1,0 +1,19 @@
+<% provide(:title, "SignUp") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <%= form_for(:signup, url: signup_url, html: {"class" => "form-signin"}) do |f| %>
+      
+      <h2 class="form-singin-header">Singup new User</h1>
+
+      <%= f.label :email, class: 'sr-only' %>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Email Address' %>
+
+      <%= f.label :password, class: 'sr-only' %>
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+
+      <%= f.submit "Singup", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
