@@ -9,10 +9,11 @@ class SignupController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			flash.now[:notice] = "User has been created successfully"
+			redirect_to items_path
 		else
 			flash.now[:danger] = "Could not create user"
+			render :index
 		end
-		render :index
 	end
 
 	def user_params

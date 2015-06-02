@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ItemsController, type: :controller do
 
 	def init_items
-		user = User.create!(username: "User 1", password: "xxxx")
+		user = User.create!(username: "username@test.com", password: "mypass123")
   	10.times do |i|
   		Item.create!(link: "http://youtube.com/SDfafdaf#{i}", link_type: (i%2==0?"Youtube":"Image"), description: "My description #{i}", user: user)
   	end

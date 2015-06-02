@@ -10,7 +10,7 @@ class LoginController < ApplicationController
  			render :index
     elsif user.authenticate(params[:login][:password])
     	add_user user
-    	redirect_to @items
+    	redirect_to items_path
     else
     	flash.now[:danger] = 'Invalid email/password combination'
 			render :index
