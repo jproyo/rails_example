@@ -1,0 +1,7 @@
+<% 10.times do |i| %>
+item_user_#{i}:
+  link: 'http://youtube.com/SDfafdaf#{i}'
+  link_type: i%2==0?'Youtube':'Image'
+  description: 'Description item #{i}'
+  user: useritems
+<% end %>

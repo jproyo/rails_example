@@ -1,3 +1,7 @@
 prelogged:
   username: 'prelogged@email.com'
   password_digest: <%= BCrypt::Password.create("mypassword123", cost: 4) %>
+
+useritems:
+  username: 'useritems@email.com'
+  password_digest: <%= BCrypt::Password.create("mypassword123", cost: 4) %>
