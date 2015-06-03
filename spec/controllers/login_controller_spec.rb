@@ -24,6 +24,33 @@ RSpec.describe LoginController, type: :controller do
 			assert_equal flash.now[:danger], 'Invalid email/password combination'
     end
 
+    it "login with empty parameters" do
+      get :index
+      assert_template 'login/index'
+      post :create, login: { email: '', password: '' }
+      assert_template 'login/index'
+      refute flash.empty?
+      assert_equal flash.now[:danger], 'Invalid email/password combination'
+    end
+
+    it "login with invalid email parameters" do
+      get :index
+      assert_template 'login/index'
+      post :create, login: { email: 'sdfsdf', password: '' }
+      assert_template 'login/index'
+      refute flash.empty?
+      assert_equal flash.now[:danger], 'Invalid email/password combination'
+    end
+
+    it "login with invalid password parameters" do
+      get :index
+      assert_template 'login/index'
+      user_prelogged = users(:prelogged)
+      post :create, login: { email: user_prelogged.username, password: 'abc' }
+      assert_template 'login/index'
+      refute flash.empty?
+      assert_equal flash.now[:danger], 'Invalid email/password combination'
+    end
 
     it "login with existing user successfully" do
       get :index
