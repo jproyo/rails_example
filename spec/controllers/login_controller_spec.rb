@@ -34,7 +34,7 @@ RSpec.describe LoginController, type: :controller do
       assert_redirected_to items_path
     end 
 
-    it "login with existing user wrong password or username" do
+    it "login with existing user wrong password" do
       get :index
       assert_template 'login/index'
       user_prelogged = users(:prelogged)
@@ -42,7 +42,8 @@ RSpec.describe LoginController, type: :controller do
       assert_template 'login/index'
       refute flash.empty?
       assert_equal flash.now[:danger], 'Invalid email/password combination'
-    end     
+    end 
+   
   end    
 
 end
