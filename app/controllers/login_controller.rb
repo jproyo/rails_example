@@ -9,17 +9,19 @@ class LoginController < ApplicationController
 	end
 
 	def create
- 		user = User.find_by(username: params[:login][:email].downcase)
- 		if user.nil?
- 			flash.now[:notice] = "User is not registered. Please click in Signup link" 
+		user, result = user_service.login
+		unless user.nil?
+			add_user user
+			redirect_to items_path
+		else
+			flash.now[:danger] = t(result)
  			render :index
-    elsif user.authenticate(params[:login][:password])
-    	add_user user
-    	redirect_to items_path
-    else
-    	flash.now[:danger] = 'Invalid email/password combination'
-			render :index
 		end
+	end
+
+	private 
+	def user_service
+		UserService.new(params)
 	end
 
 end

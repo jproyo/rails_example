@@ -21,7 +21,7 @@ RSpec.describe LoginController, type: :controller do
 			post :create, login: { email: 'unknown_user@test.com', password: 'mypass123' }
 			assert_template 'login/index'
 			refute flash.empty?
-			assert_equal flash.now[:notice], 'User is not registered. Please click in Signup link'
+			assert_equal flash.now[:danger], 'Invalid email/password combination'
     end
 
 
