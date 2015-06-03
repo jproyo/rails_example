@@ -5,6 +5,7 @@ class LoginController < ApplicationController
 
 	def destroy
 		session.destroy
+		redirect_to root_path
 	end
 
 	def create

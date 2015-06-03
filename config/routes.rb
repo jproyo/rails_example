@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'items#index'
   get    'login'   => 'login#index'
   post   'login'   => 'login#create'
-  delete 'login'   => 'login#destroy'
+  delete 'logout'   => 'login#destroy'
   get    'signup'  => 'signup#index'
   post   'signup'  => 'signup#create'
 
