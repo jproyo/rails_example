@@ -1,7 +1,35 @@
-<% 10.times do |i| %>
-item_user_#{i}:
-  link: 'http://youtube.com/SDfafdaf#{i}'
-  link_type: i%2==0?'Youtube':'Image'
-  description: 'Description item #{i}'
+item_user_1:
+  link: 'http://youtube.com/SDfafdaf#1'
+  link_type: 'Youtube'
+  description: 'Description item #1'
   user: useritems
-<% end %>
+item_user_2:
+  link: 'http://youtube.com/SDfafdaf#2'
+  link_type: 'Image'
+  description: 'Description item #2'
+  user: prelogged
+item_user_3:
+  link: 'http://youtube.com/SDfafdaf#3'
+  link_type: 'Youtube'
+  description: 'Description item #3'
+  user: useritems
+item_user_4:
+  link: 'http://youtube.com/SDfafdaf#4'
+  link_type: 'Image'
+  description: 'Description item #4'
+  user: prelogged
+item_user_5:
+  link: 'http://youtube.com/SDfafdaf#5'
+  link_type: 'Youtube'
+  description: 'Description item #5'
+  user: useritems
+item_user_6:
+  link: 'http://youtube.com/SDfafdaf#6'
+  link_type: 'Image'
+  description: 'Description item #6'
+  user: prelogged
+item_user_7:
+  link: 'http://youtube.com/SDfafdaf#7'
+  link_type: 'Image'
+  description: 'Description item #7'
+  user: useritems  

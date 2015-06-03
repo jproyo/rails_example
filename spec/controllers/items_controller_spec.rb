@@ -21,8 +21,11 @@ RSpec.describe ItemsController, type: :controller do
     it "returns list of items for an user" do
       get :index
       assert_template 'items/index'
-      response.should be_success
-      response.should have_http_status(200)
+      assert_response :success
+      items = assigns(:items)
+      refute_nil items
+      refute items.empty?
+      assert_equal items.size, 4
     end
   end
 
