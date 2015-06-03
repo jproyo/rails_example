@@ -6,18 +6,13 @@ class SignupController < ApplicationController
 	end
 
 	def create
-		@user = User.new(user_params)
-		if @user.save
-			flash.now[:notice] = "User has been created successfully"
+		created = user_service.register
+		if created 
 			redirect_to items_path
 		else
-			flash.now[:danger] = "Could not create user"
+			flash.now[:danger] = t(:could_not_create_user)
 			render :index
 		end
 	end
-
-	def user_params
-    params.require(:signup).permit(:username, :password)
-  end
 
 end

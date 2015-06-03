@@ -22,3 +22,4 @@
 en:
   hello: "Hello world"
   invalid_user_or_password: "Invalid email/password combination"
+  could_not_create_user: "Could not register user"

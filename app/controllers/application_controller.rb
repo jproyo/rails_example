@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.username
   end
 
+  def user_service
+    UserService.new(params)
+  end
+
   private
   def secure_app
   	redirect_to controller: 'login' if current_user.nil?

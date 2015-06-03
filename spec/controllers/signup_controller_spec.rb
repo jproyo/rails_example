@@ -25,7 +25,7 @@ RSpec.describe SignupController, type: :controller do
 			post :create, signup: { username: 'unknown_user@test.com', password: 'mypass123' }
 			assert_template 'signup/index'
 			refute flash.empty?
-			assert_equal flash.now[:danger], 'Could not create user'
+			assert_equal flash.now[:danger], 'Could not register user'
     end    
 
   end

@@ -13,4 +13,12 @@ class UserService
  		[nil,:invalid_user_or_password]
 	end
 
+	def register
+		User.new(user_params).save
+	end
+
+	def user_params
+    params.require(:signup).permit(:username, :password)
+  end
+
 end

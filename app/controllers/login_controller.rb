@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
+
 	skip_before_filter :secure_app
 	def index
 	end
@@ -17,11 +18,6 @@ class LoginController < ApplicationController
 			flash.now[:danger] = t(result)
  			render :index
 		end
-	end
-
-	private 
-	def user_service
-		UserService.new(params)
 	end
 
 end
