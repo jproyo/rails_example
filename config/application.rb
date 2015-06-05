@@ -22,5 +22,7 @@ module MyApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.api_resource_secret = ENV['API_RESOURCE_SECRET'] || '25f0cd34fc7d4cb93772d82743462f58f4b61d5eae5f3459cbef19b97c26cf1e'
   end
 end

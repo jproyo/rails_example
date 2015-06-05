@@ -19,11 +19,12 @@ RSpec.describe ItemsController, type: :controller do
 
 
     it "returns list of items for an user" do
-      get :list
+      get :index
       assert_response :success
-      body_response = JSON.parse(response.body)
-      refute body_response.nil?
-      assert_equal body_response.size, 4
+      assert_template 'items/index'
+      items = assigns(:items)
+      refute items.nil?
+      assert_equal items.size, 4
     end
   end
 

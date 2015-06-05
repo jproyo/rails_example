@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   scope '/api' do
     scope '/v1' do
       scope '/items' do
-        get '/' => 'items#list'
+        get '/' => 'api/items#list'
         post '/' => 'items#create'
         scope '/:name' do
           get '/' => 'items#show'
