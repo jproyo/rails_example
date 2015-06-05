@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  resources :items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,6 +9,21 @@ Rails.application.routes.draw do
   delete 'logout'   => 'login#destroy'
   get    'signup'  => 'signup#index'
   post   'signup'  => 'signup#create'
+  get    'items' => 'items#index'
+
+  scope '/api' do
+    scope '/v1' do
+      scope '/items' do
+        get '/' => 'items#list'
+        post '/' => 'items#create'
+        scope '/:name' do
+          get '/' => 'items#show'
+          put '/' => 'items#update'
+          delete '/' => 'items#delete'
+        end
+      end
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
