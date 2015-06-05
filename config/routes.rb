@@ -15,11 +15,11 @@ Rails.application.routes.draw do
     scope '/v1' do
       scope '/items' do
         get '/' => 'api/items#list'
-        post '/' => 'items#create'
+        post '/' => 'api/items#create'
         scope '/:name' do
-          get '/' => 'items#show'
-          put '/' => 'items#update'
-          delete '/' => 'items#delete'
+          get '/' => 'api/items#show'
+          put '/' => 'api/items#update'
+          delete '/' => 'api/items#delete'
         end
       end
     end
