@@ -7,8 +7,8 @@ RSpec.describe LoginController, type: :controller do
 	describe "GET #login" do
     it "go to login page" do
       get :index
-      response.should be_success
-      response.should have_http_status(200)
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
     end
 
        

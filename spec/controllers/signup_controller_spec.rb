@@ -7,8 +7,8 @@ RSpec.describe SignupController, type: :controller do
     it "go to signup page" do
       get :index
       assert_template 'signup/index'
-      response.should be_success
-      response.should have_http_status(200)
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
     end
 
     it "go to signup page and fill up form success" do
@@ -21,7 +21,7 @@ RSpec.describe SignupController, type: :controller do
     it "go to signup page and fill up form fail" do
       get :index
       assert_template 'signup/index'
-			User.any_instance.stub(:save).and_return(false)
+			allow_any_instance_of(User).to receive(:save).and_return(false)
 			post :create, signup: { username: 'unknown_user@test.com', password: 'mypass123' }
 			assert_template 'signup/index'
 			refute flash.empty?

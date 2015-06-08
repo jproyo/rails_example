@@ -3,11 +3,12 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
     	t.string :link
     	t.string :link_type
+      t.string :user_id
     	t.text :description
-    	t.integer :user_id
     	t.references :users, index: true
 
       t.timestamps null: false
     end
+    add_foreign_key :items, :users
   end
 end

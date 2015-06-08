@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20150602224446) do
   create_table "items", force: :cascade do |t|
     t.string   "link"
     t.string   "link_type"
+    t.string   "user_id"
     t.text     "description"
-    t.integer  "user_id"
     t.integer  "users_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

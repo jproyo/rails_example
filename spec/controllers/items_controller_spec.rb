@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
 
-  fixtures :items, :users
+  fixtures :users
 
   describe "Unauthenticated" do
     it "redirect to login page for unauthenticated user" do
@@ -14,7 +14,7 @@ RSpec.describe ItemsController, type: :controller do
   describe "GET #index" do
 
     before(:each) do
-      controller.stub(:current_user).and_return(users(:useritems))
+      expect(controller).to receive(:current_user).twice.and_return(users(:useritems))
     end
 
 
